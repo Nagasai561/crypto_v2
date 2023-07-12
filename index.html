@@ -18,25 +18,27 @@
         </div>
     </div>
 
+    <div class="place-holder"> </div>
+
     <div class="intro-text">
         This is a fun project, we both worked together to create something big Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores optio maxime quod dolorem officia reiciendis consequatur autem libero delectus earum corporis nobis cupiditate, tempore vitae reprehenderit, voluptatum id incidunt nam ex odio suscipit ipsam dolores excepturi impedit. Aperiam, quisquam reprehenderit aspernatur quae, consequuntur ducimus odit doloremque neque esse velit blanditiis
     </div>
     <div class="try-container">
 
+        <div class="try-type">
+            Encrypt as text: <input type="checkbox">
+            Encrypt as image <input type="checkbox">
+        </div>
+
         <div class="try-fields">
-            <div class="try-fields-top">
-                <div>Input: <input type="text"></div>
-                <div>Output: <input type="text"></div>
-            </div>
-            <div class="try-fields-bottom">
-                Key: <input type="text">
-            </div>
+                <div>Input: <textarea type="text" id="text-input"> </textarea></div>
+                <div>Output: <textarea type="text" id="text-output"></textarea></div>
         </div>
 
         <div class="try-buttons">
-            <div><button id="encrypt">Encrypt</button></div>
-            <div><button id="decrypt">decrypt</button></div>
-            <div><button id="reset">reset</button></div>   
+            <div><button id="encrypt-text">Encrypt</button></div>
+            <div><button id="decrypt-text">Decrypt</button></div>
+            <div><button id="reset-text">reset</button></div>   
         </div>
 
     </div>
