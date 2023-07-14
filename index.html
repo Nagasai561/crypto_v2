@@ -23,22 +23,81 @@
     <div class="intro-text">
         This is a fun project, we both worked together to create something big Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores optio maxime quod dolorem officia reiciendis consequatur autem libero delectus earum corporis nobis cupiditate, tempore vitae reprehenderit, voluptatum id incidunt nam ex odio suscipit ipsam dolores excepturi impedit. Aperiam, quisquam reprehenderit aspernatur quae, consequuntur ducimus odit doloremque neque esse velit blanditiis
     </div>
+
+    <div class="selection">
+        
+        <div>
+            <label>Encrypt as text: </label> <input type="checkbox" id="checkbox-text">
+            <select name="" id="drop-text" class="drop" disabled>
+                <option value="none">None</option>
+                <option value="try-noKey">Without key</option>
+                <option value="try-userGenKey">User generated key</option>
+                <option value="try-sysGenKey">System generated key</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Encrypt as image: </label> <input type="checkbox" id="checkbox-img">
+            <select name="" id="drop-img" class="drop" disabled>
+                <option value="none">None</option>
+                <option value="bw">Black and white</option>
+                <option value="color">Random image</option>
+            </select>
+        </div>
+
+    </div>
+
     <div class="try-container">
+        <div class="try-subcontainer" id="try-noKey">
+            this is no key
+            <div class="try-fields">
+                <label for="">Plaintext: </label> <textarea name="" id="try-no-key-fields-plaintext" cols="30" rows="3"></textarea>
+                <label for="">Ciphertext: </label> <textarea name="" id="try-no-key-fields-ciphertext" cols="30" rows="3"></textarea>
+            </div>
 
-        <div class="try-type">
-            Encrypt as text: <input type="checkbox">
-            Encrypt as image <input type="checkbox">
+            <div class="try-buttons">
+                <button id="try-noKey-encrypt">Encrypt</button>
+                <button id="try-noKey-decrypt">Decrypt</button>
+                <button id="try-noKey-reset">Reset </button>
+            </div>
         </div>
 
-        <div class="try-fields">
-                <div>Input: <textarea type="text" id="text-input"> </textarea></div>
-                <div>Output: <textarea type="text" id="text-output"></textarea></div>
+        <div class="try-subcontainer" id="try-userGenKey">
+            user generated
+            <div class="try-fields">
+                <label for="">Plaintext: </label> <textarea name="" id="try-userGenKey-fields-plaintext" cols="30" rows="3"></textarea>
+                <label for="">Ciphertext: </label> <textarea name="" id="try-userGenKey-fields-ciphertext" cols="30" rows="3"></textarea>
+                <label for="">Key: </label> <textarea name="" id="try-userGenKey-fields-key" cols="30" rows="3"></textarea>
+            </div>
+
+            <div class="try-buttons" id="">
+                <button id="try-userGenKey-encrypt">Encrypt</button>
+                <button id="try-userGenKey-decrypt">Decrypt</button>
+                <button id="try-userGenKey-reset">Reset</button>
+            </div>
         </div>
 
-        <div class="try-buttons">
-            <div><button id="encrypt-text">Encrypt</button></div>
-            <div><button id="decrypt-text">Decrypt</button></div>
-            <div><button id="reset-text">reset</button></div>   
+        <div class="try-subcontainer" id="try-sysGenKey">
+            system generated 
+            <div class="try-fields">
+                <label for="">Plaintext: </label> <textarea name="" id="try-sysGenKey-fields-plaintext" cols="30" rows="3"></textarea>
+                <label for="">Ciphertext: </label> <textarea name="" id="try-sysGenKey-fields-ciphertext" cols="30" rows="3"></textarea>
+                <label for="">Key: </label> <textarea name="" id="try-sysGenKey-fields-key" cols="30" rows="3"></textarea>
+            </div>
+
+            <div class="try-buttons">
+                <button id="try-sysGenKey-encrypt">Encrypt</button>
+                <button id="try-sysGenKey-decrypt">Decrypt</button>
+                <button id="try-sysGenKey-reset">Reset</button>
+            </div>
+        </div>
+
+        <div class="try-subcontainer" id="bw">
+            This is black and white
+        </div>
+
+        <div class="try-subcontainer" id="color">
+            This is color
         </div>
 
     </div>

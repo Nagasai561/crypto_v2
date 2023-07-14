@@ -38,28 +38,21 @@
     margin-bottom: 3vh;
 }
 
+/*selection*/
 
-/*try*/
-
-.try-container {
-    margin-bottom: 3vh;
-}
-.try-buttons {
-    justify-content: center;
-    display: flex;
-}
-
-.try-buttons button {
-    margin-left: 2vw;
-    margin-right: 2vw;
-}
-
-.try-fields {
+.selection {
     display: flex;
     justify-content: space-around;
 }
 
 
+
+
+/*try*/
+
+.try-subcontainer {
+    display: none;
+}
 
 /*instructions*/
 
