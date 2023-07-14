@@ -24,6 +24,9 @@ dropText.addEventListener("change", function() {
     if(dropText.value != "none") {
         document.getElementById(dropText.value).style.display = "block";
     }
+    if(dropText.value == "try-userGenKey") {
+        window.alert("Please input a number between 0 and 60000 in the key field");
+    }
 });
 
 dropImg = document.getElementById("drop-img");
