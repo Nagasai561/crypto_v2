@@ -54,6 +54,23 @@
     display: none;
 }
 
+/*sysGen-img*/
+#canvas-sysGen-encrypt {
+    width: 100px;
+    height: 100px;
+}
+
+#canvas-sysGen-decrypt {
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+#sysGen-img-encrypt {
+    display: flex;
+}
+
+
 /*instructions*/
 
 .instructions {

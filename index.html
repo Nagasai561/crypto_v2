@@ -40,7 +40,7 @@
             <label>Encrypt as image: </label> <input type="checkbox" id="checkbox-img">
             <select name="" id="drop-img" class="drop" disabled>
                 <option value="none">None</option>
-                <option value="bw">Black and white</option>
+                <option value="sysGen-img">System generated image</option>
                 <option value="color">Random image</option>
             </select>
         </div>
@@ -92,8 +92,23 @@
             </div>
         </div>
 
-        <div class="try-subcontainer" id="bw">
-            This is black and white
+        <div class="try-subcontainer" id="sysGen-img">
+            <div id="sysGen-img-encrypt">
+                <div >
+                    <textarea  id="sysGen-img-plainText" cols="30" rows="10" placeholder="Enter your text here"></textarea>
+                    <button id="sysGen-img-encrypt-button">Encrypt</button>
+                </div>
+                <div>
+                    <canvas id="canvas-sysGen-encrypt"></canvas>
+                </div>
+            </div>
+
+            <div id="sysGen-img-decrypt">
+                <input type="file" id="sysGen-img-decrypt-file">
+                <button id="sysGen-img-decrypt-button">Decrypt</button>
+                <canvas id="canvas-sysGen-decrypt"></canvas>
+                <textarea name="" id="sysGen-img-decryptedText" cols="30" rows="10" placeholder="Your decrypted text appears here"></textarea>
+            </div>
         </div>
 
         <div class="try-subcontainer" id="color">
