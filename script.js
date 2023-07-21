@@ -13,13 +13,12 @@ window.onload = function() {
 
     let default_img = new Image();
     default_img.onload = function () {
-        ctx.drawImage(default_img, 0, 0)
+        ctx.drawImage(default_img, 0, 0, canvas.width, canvas.height);
     }
     default_img.src = "./images/jZhAM.png";
 
 }
 
-const key = 34;
 
 
 //selection
@@ -282,9 +281,12 @@ sysGenImgEncryptB.addEventListener("click", function() {
     let imageData = ctx.getImageData(0,0, canvas.width, canvas.height);
     let data = imageData.data;
     let inputText = document.getElementById("sysGen-img-plainText").value;
+    let key = Math.floor(Math.random()*1000)%256;
     let i;
-    for(i=0; i<inputText.length; i++) {
-        data[4*i] = key^(inputText.charCodeAt(i));
+    
+    data[0] = key;
+    for(i=1; i<=inputText.length; i++) {
+        data[4*i] = key^(inputText.charCodeAt(i-1));
     }
     data[4*i] = 255;
     data[4*i+1] = 255;
@@ -305,8 +307,9 @@ sysGenImgDecryptB.addEventListener("click", function() {
             ctx.drawImage(newImg, 0, 0);
             let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
             let data = imageData.data;
-            let i=0;
+            let i=4;
             let outputStr = "";
+            let key = data[0];
             while(((data[i] != 255) || (data[i+1]!=255) || (data[i+2] != 255)) && (i<data.length)) {
                 outputStr += String.fromCharCode(key^data[i]);
                 i += 4;

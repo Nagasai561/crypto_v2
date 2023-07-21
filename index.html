@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saiman</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -12,19 +17,25 @@
     <div class="navbar-container">
         <div class="navbar-logo"><img src="images/S.jpg" alt="Saiman logo"></div>
         <div class="navbar-text">
-            <div>Try</div>
-            <div>Instructions</div>
-            <div>About Us</div>
+            <div><a href="#try-scroll">Try</a> </div>
+            <div><a href="#instructions-scroll">Instructions</a></div>
+            <div><a href="#about-us">About us</a></div>
         </div>
     </div>
 
     <div class="place-holder"> </div>
 
-    <div class="intro-text">
-        This is a fun project, we both worked together to create something big Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores optio maxime quod dolorem officia reiciendis consequatur autem libero delectus earum corporis nobis cupiditate, tempore vitae reprehenderit, voluptatum id incidunt nam ex odio suscipit ipsam dolores excepturi impedit. Aperiam, quisquam reprehenderit aspernatur quae, consequuntur ducimus odit doloremque neque esse velit blanditiis
+    <div class="intro-content" id="try-scroll">
+        <div class="intro-content-text">
+            This is Saiman, a website where you can encrypt your messages in textual or pictoral format. We undertook this project to explore encryption, implementing new technologies for fun with unyielding passion. We hope you like it!
+        </div>
+
+        <div class="intro-content-logo">
+            <img src="./images/mnlogo.jpg" alt="Our logo">
+        </div>
     </div>
 
-    <div class="selection">
+    <div class="selection" id="instructions-scroll">
         
         <div>
             <label>Encrypt as text: </label> <input type="checkbox" id="checkbox-text">
@@ -41,18 +52,25 @@
             <select name="" id="drop-img" class="drop" disabled>
                 <option value="none">None</option>
                 <option value="sysGen-img">System generated image</option>
-                <option value="color">Random image</option>
+                <option value="color" disabled>Random image</option>
             </select>
         </div>
 
     </div>
 
+
+
     <div class="try-container">
         <div class="try-subcontainer" id="try-noKey">
-            this is no key
             <div class="try-fields">
-                <label for="">Plaintext: </label> <textarea name="" id="try-no-key-fields-plaintext" cols="30" rows="3"></textarea>
-                <label for="">Ciphertext: </label> <textarea name="" id="try-no-key-fields-ciphertext" cols="30" rows="3"></textarea>
+                <div>
+                    <label for="">Plaintext: </label> <textarea name="" id="try-no-key-fields-plaintext" cols="30" rows="3" placeholder="  Plain text goes here"></textarea>
+                </div>
+
+                <div>
+                    <label for="">Ciphertext: </label> <textarea name="" id="try-no-key-fields-ciphertext" cols="30" rows="3" placeholder="  Cipher text goes here"></textarea>
+                </div>
+                
             </div>
 
             <div class="try-buttons">
@@ -63,11 +81,16 @@
         </div>
 
         <div class="try-subcontainer" id="try-userGenKey">
-            user generated
             <div class="try-fields">
-                <label for="">Plaintext: </label> <textarea name="" id="try-userGenKey-fields-plaintext" cols="30" rows="3"></textarea>
-                <label for="">Ciphertext: </label> <textarea name="" id="try-userGenKey-fields-ciphertext" cols="30" rows="3"></textarea>
-                <label for="">Key: </label> <textarea name="" id="try-userGenKey-fields-key" cols="30" rows="3"></textarea>
+                <div>
+                    <label for="">Plaintext: </label> <textarea name="" id="try-userGenKey-fields-plaintext" cols="30" rows="3"></textarea>
+                </div>
+                <div>
+                    <label for="">Ciphertext: </label> <textarea name="" id="try-userGenKey-fields-ciphertext" cols="30" rows="3"></textarea>
+                </div>
+                <div>
+                    <label for="">Key: </label> <textarea name="" id="try-userGenKey-fields-key" cols="30" rows="3"></textarea>
+                </div>
             </div>
 
             <div class="try-buttons" id="">
@@ -78,11 +101,16 @@
         </div>
 
         <div class="try-subcontainer" id="try-sysGenKey">
-            system generated 
             <div class="try-fields">
-                <label for="">Plaintext: </label> <textarea name="" id="try-sysGenKey-fields-plaintext" cols="30" rows="3"></textarea>
-                <label for="">Ciphertext: </label> <textarea name="" id="try-sysGenKey-fields-ciphertext" cols="30" rows="3"></textarea>
-                <label for="">Key: </label> <textarea name="" id="try-sysGenKey-fields-key" cols="30" rows="3"></textarea>
+                <div>
+                    <label for="">Plaintext: </label> <textarea name="" id="try-sysGenKey-fields-plaintext" cols="30" rows="3"></textarea>
+                </div>
+                <div>
+                    <label for="">Ciphertext: </label> <textarea name="" id="try-sysGenKey-fields-ciphertext" cols="30" rows="3"></textarea>
+                </div>
+                <div>
+                    <label for="">Key: </label> <textarea name="" id="try-sysGenKey-fields-key" cols="30" rows="3"></textarea>
+                </div>
             </div>
 
             <div class="try-buttons">
@@ -95,19 +123,28 @@
         <div class="try-subcontainer" id="sysGen-img">
             <div id="sysGen-img-encrypt">
                 <div >
-                    <textarea  id="sysGen-img-plainText" cols="30" rows="10" placeholder="Enter your text here"></textarea>
+                    <label for="">Enter your text: </label>
+                    <textarea  id="sysGen-img-plainText" cols="30" rows="4" placeholder="  Enter your text here"></textarea>
                     <button id="sysGen-img-encrypt-button">Encrypt</button>
                 </div>
+
+    
                 <div>
                     <canvas id="canvas-sysGen-encrypt"></canvas>
                 </div>
             </div>
 
+            <hr>
+
             <div id="sysGen-img-decrypt">
                 <input type="file" id="sysGen-img-decrypt-file">
                 <button id="sysGen-img-decrypt-button">Decrypt</button>
                 <canvas id="canvas-sysGen-decrypt"></canvas>
-                <textarea name="" id="sysGen-img-decryptedText" cols="30" rows="10" placeholder="Your decrypted text appears here"></textarea>
+                <div>
+                    Decrypted text appears here:
+                    <textarea name="" id="sysGen-img-decryptedText" cols="30" rows="4" placeholder="  Your decrypted text appears here"></textarea>
+
+                </div>
             </div>
         </div>
 
@@ -118,28 +155,76 @@
     </div>
 
     <div class="instructions">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem adipisci dolor illo voluptate temporibus molestiae vero natus perferendis quam ipsam, accusantium harum, mollitia sequi delectus, velit nostrum odio quidem quae esse eveniet aliquam quo! Sapiente reprehenderit esse non mollitia. Deserunt animi, dicta molestiae ipsum accusantium aperiam, corrupti reiciendis fugiat, officiis fugit cumque. Fugiat, modi aliquid eum pariatur expedita asperiores, magnam quas, earum eaque corporis qui? Asperiores corrupti aut cum quasi nihil, eaque ea inventore, incidunt illo assumenda dolorem a consectetur nulla accusamus, quibusdam voluptatum ut amet obcaecati deserunt facere accusantium aliquid autem repudiandae. Quae nostrum esse a! Molestias, aspernatur voluptate.
-    </div>
+        <div id="instructions-heading">
+            Instructions
+        </div>
 
-    <div class="about-us">
-        <div class="profiles">
+        <div class="instructions-table">
             <div>
-                <img src="" alt="nagasai">
-                <p>someshit abt me</p>
-                <p>someshit</p>
+                <div id="instructions-mini-heading">To encrypt as text</div>
+                <ol>
+                    <li>Tick the "Encrypt as text" checbox </li>
+                    <li>Choose the method you want to use</li>
+                    <li>If you choose "User generated", please make sure that key is a positive integer less than 60000</li>
+                    <li>Enter your message in the appropriate input field</li>
+                    <li>If you are using "User generated key", then enter a key in the appropriate field</li>
+                    <li>Press "Encrypt" button</li>
+                    <li>You will see cipher text in it's appropriate box</li>
+                    <li>To decypt a message, you need to know ciphered text, it's corresponding key (Note that in "No key" method, key isn't required) and the method by which it was encrypted</li>
+                    <li>Again tick "Encrypt as text" and choose the correct method by which ciphertext was obtained</li>
+                    <li>Enter the cipher text in appropriate textbox</li>
+                    <li>Enter the key in the appropriate textbox (No need to do this step if you have chosen "No key" method)</li>
+                    <li>Press "Decrypt" button</li>
+                    <li>You will see the decrypted text in the "Plaintext box"</li>
+                </ol>
+
             </div>
-
             <div>
-                <img src="" alt="vikku">
-                <p>somshit abt vikku</p>
-                <p>someshit</p>
+                <div id="instructions-mini-heading">To encrypt as image</div>
+                <ol>
+                    <li>Tick the "Encrypt as image" checkbox</li>
+                    <li>Choose the method you want to use</li>
+                    <li>Type your message in the indicated box</li>
+                    <li>Press "Encrypt" button</li>
+                    <li>Download the noisy image you see on side</li>
+                    <li>Send that image to anyone you like</li>
+                    <li>To decrypt text from image, you need to have the image on your device</li>
+                    <li>Click on "Choose File" and upload that image</li>
+                    <li>Press "Decrypt" button</li>
+                    <li>Decrypted text will be displayed on the corressponding textbox</li>
+                </ol>
+
             </div>
         </div>
     </div>
 
-    <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nam corporis amet. Accusamus numquam totam officia aut nulla nemo dicta ad, veritatis id deleniti neque fugit inventore qui asperiores doloremque suscipit, cum laborum dignissimos enim? In, qui autem. Aliquam vitae animi sunt obcaecati exercitationem deleniti dolor molestiae hic! Quae maiores animi velit vero sint ullam quasi, molestias atque corporis at cum totam voluptates quidem dolorem iusto est consequatur quibusdam illo! Voluptate quidem deserunt quibusdam asperiores? Rerum iure illum suscipit officia sunt id tenetur maiores aut reprehenderit voluptate corporis vero enim, ut neque impedit commodi. Perspiciatis eius aperiam ullam commodi, qui consectetur excepturi voluptates obcaecati et ipsam quod, molestias temporibus! Maiores veritatis, at minus laudantium qui id dicta provident. Autem esse ipsa veritatis quod rerum repellat porro repudiandae, velit praesentium qui distinctio. Exercitationem enim, similique molestiae neque at omnis earum aut reiciendis corrupti doloremque corporis non maiores explicabo excepturi rerum a ut animi sint vero pariatur sed! Sed doloremque fugiat a voluptate veritatis hic eius eveniet, est unde id quia consequuntur saepe quasi iste dolore enim nisi architecto nostrum! Reiciendis quisquam nisi id corporis odit provident illo ratione dolorem ab doloribus, a aliquid omnis iusto harum error voluptatibus veritatis voluptas necessitatibus molestiae eum sed, nesciunt cupiditate suscipit beatae. Quas nemo quidem, minima commodi labore aliquid ab optio dolorem vel sint voluptatibus alias quam assumenda dolorum illo doloremque sunt obcaecati itaque culpa harum vero debitis aspernatur? Vero soluta dolores sequi fuga ipsa ducimus qui incidunt officiis aut consequuntur impedit officia, cum voluptas architecto? Incidunt quod, nulla enim a culpa earum, vitae autem sed delectus voluptatum sit, sint deserunt odit laborum aliquid quidem inventore. Sequi minus, ut vel unde obcaecati aperiam expedita, vitae exercitationem dicta odit ducimus dolor similique fugit optio earum a voluptatem quaerat ipsa debitis! Velit, tenetur officia natus ducimus nobis provident soluta obcaecati, non quaerat laboriosam et maxime distinctio explicabo! Adipisci recusandae ipsum sit tempore error sapiente quam quos, doloremque praesentium, assumenda autem voluptatum vel animi tenetur natus sequi laborum debitis. Accusantium expedita sunt, hic itaque recusandae repudiandae quasi quas cupiditate dignissimos iusto maiores temporibus fugiat debitis suscipit molestias odit voluptatibus illum quidem veritatis adipisci deleniti rerum. Odit rem qui corrupti dignissimos deserunt maxime. Totam quis libero alias! Maiores earum quis mollitia quibusdam ratione a tempora rem aut quod, recusandae adipisci aliquid corporis odio consequatur nihil doloremque similique doloribus sapiente nostrum quae iusto architecto eaque qui velit. Laborum provident repudiandae minus harum iste rem dolores ipsam quibusdam, vitae ipsum facilis itaque nihil placeat dolorem nam ut accusamus, perspiciatis quis, odio dignissimos? Voluptatibus dignissimos cupiditate accusamus optio aspernatur sapiente mollitia reiciendis minima fuga laboriosam, totam, voluptas a quaerat, at enim est repellat. Dolores laborum ducimus, facere animi soluta atque sequi! Id non eos voluptate quaerat est inventore et natus veritatis vitae doloremque ipsam, alias porro. Perspiciatis quis harum accusantium qui repudiandae error inventore veniam sit, unde assumenda suscipit velit quam dolorem laborum adipisci tenetur. Odit ipsa sapiente dicta adipisci perspiciatis aperiam a! Totam voluptatibus maxime voluptate culpa, nulla maiores perspiciatis inventore dolores vero doloremque, eum molestiae, eaque esse nam dignissimos voluptates aut possimus animi deleniti saepe excepturi? Sint totam, saepe ratione magnam sed aperiam beatae dolore dolor minus sapiente pariatur accusamus laudantium perferendis, qui minima ducimus vero nesciunt dolorum ipsa, iure ipsam at quae? Vero necessitatibus hic nihil, at debitis ullam? Neque officia, nihil minima numquam ea ipsum ipsa! Beatae dolorem perferendis placeat sit amet ratione quas numquam nobis fuga ea ducimus a nostrum est, inventore vitae temporibus recusandae consequatur sed culpa, impedit harum, quod tempora explicabo eligendi. Iure, quos dicta alias expedita ad quo dolore saepe corporis voluptatem illum vitae numquam sed impedit, nostrum non aperiam consequuntur ratione laudantium molestiae corrupti animi dolor possimus itaque. Asperiores, pariatur? Dolor, ducimus, recusandae rerum cupiditate nostrum, iste vitae quae reiciendis nesciunt quo consequatur neque perferendis. Voluptates dicta laborum culpa placeat totam doloremque maiores unde error aliquam illum eum pariatur hic nihil alias cupiditate veritatis voluptate tempore recusandae, doloribus accusamus explicabo quod consequatur inventore? A repellendus quia, vero, perferendis eum doloremque itaque earum facilis dolorum nostrum molestias, temporibus esse quod delectus. Blanditiis dolore adipisci odio similique, ut aliquid placeat nulla repudiandae sequi corrupti voluptates perspiciatis, et voluptate non in atque omnis? Mollitia dignissimos possimus voluptates voluptatem doloremque excepturi aspernatur earum tempora voluptatibus fugiat officia, hic a rerum sapiente! Deserunt eaque ipsam fugiat facere praesentium beatae explicabo similique, quos deleniti eligendi eveniet, pariatur quod culpa, atque qui odit necessitatibus aliquam? Dolores voluptatibus, atque non quae excepturi dignissimos laborum beatae totam illum consequuntur numquam aliquam molestiae asperiores cumque officia molestias accusantium in sed doloremque labore rem reiciendis provident velit amet? Sequi voluptatibus minus dicta quidem, aliquam delectus vero ea sapiente. Iure culpa alias ratione explicabo magni iste vel aliquid impedit? Quia modi perferendis quibusdam rem iste qui repudiandae, quam cum beatae illum eveniet in natus, quas quos ipsum vero ipsam ad repellendus libero eos explicabo molestiae dolorem. Officiis, voluptatibus, non est quidem ipsum optio iure delectus placeat vitae modi necessitatibus quasi minus saepe laborum molestiae rerum quia ea a recusandae! Eum aut magnam, suscipit quis dolorem similique, nam accusantium eveniet ipsa voluptatum esse praesentium harum in modi omnis ullam consequuntur nihil odio inventore, obcaecati nostrum voluptatibus quos! Amet nihil vel tempore quam officiis laborum temporibus non odit harum quibusdam reprehenderit omnis, quas molestias ipsa eius, quaerat dicta quo aliquam cum praesentium. Eius non pariatur accusantium exercitationem doloribus corrupti iste error ea vitae, impedit provident quos tempore. Nemo neque magnam, labore eum quidem optio! Quia cupiditate eum aperiam illo soluta neque tempore nemo laudantium, nostrum sed quisquam eos est architecto esse voluptates cumque dolorum laborum doloribus ducimus. Sunt atque molestias numquam vero aut sequi, odio doloremque quidem saepe, possimus, eos voluptatem laudantium hic magnam? Nisi debitis eveniet a id quos aliquid non maiores libero recusandae natus. Repudiandae dolore asperiores libero laudantium consequatur deleniti et numquam aliquid provident mollitia, eos minima, molestias quasi adipisci eum sint dignissimos commodi iusto. Reprehenderit modi dolor vero officia cum dolore, aspernatur officiis voluptas fugiat, aut odit nobis explicabo quia voluptatum, ut iste.
+    <div class="about-us" id="about-us">
+        <div class="about-us-heading">About us</div>
+        <div class="profiles">
+            <div>
+                <div><img src="./images/nagasai.jpg" alt="" class="profile-pic"></div>
+                <div>Email: nagasaij@iisc.ac.in</div>
+                <div class="inline-div">
+                    <a href="https://www.linkedin.com/in/nagasai-jajapuram-1b8a73273/"><img src="./images/linkedin.jpg" alt=""></a>
+                    <a href="https://github.com/Nagasai561"><img src="./images/github_logo.jpeg" alt=""></a>
+                    
+                    
+                </div>
+            </div>
+
+            <div>
+                <div><img src="./images/aboutusvikku.jpg" alt="" class="profile-pic"></div>
+                <div>Email: sathvikm@iisc.ac.in</div>
+                <div class="inline-div">
+                    <a href="https://www.linkedin.com/in/sathvik-manthri-365984259/"><img src="./images/linkedin.jpg" alt=""></a>
+                    
+                    <a href="https://github.com/Sathvik040105"><img src="./images/github_logo.jpeg" alt=""></a>
+                    
+                </div>
+            </div>
+        </div>
     </div>
+
 
 
 
