@@ -7,8 +7,6 @@ button {
     display: block;
     margin-left: 2vw;
     margin-right: 2vw;
-    width: 7vh;
-    height: 3vh;
     font-size: medium;
     font-family: Pangoling, Arial, Helvetica, sans-serif;
 }
@@ -17,9 +15,9 @@ button {
 
 .navbar-container {
     display: flex;
-    flex-wrap: wrap;
     height: 8vh;
     justify-content: space-around;
+    text-align: center;
     background-color: blue;
     width: 100%;
     position: fixed;
@@ -100,7 +98,7 @@ button {
     display: flex;
     font-family: Pangolin;
     font-size: large;
-    background-color: bisque;
+    background-color: orange;
     padding: 2vh 2vw 2vh 2vw;
     border-radius: 3vw;
     margin: 1vh 2vw 1vh 2vw;
@@ -232,13 +230,13 @@ hr{
     border-radius: 3vw;
     margin: 1vh 2vw 1vh 2vw;
     padding: 2vh 2vw 2vh 2vw;
-    font-family: 'Pacifico', cursive;
-    scroll-snap-align: start;
+    font-family: 'Asap condensed', sans-serif;
 }
 
 #instructions-heading {
     font-size: x-large;
     text-align: center;
+    font-weight: 700;
 }
 
 
@@ -263,15 +261,17 @@ hr{
 /*about-us*/
 
 .about-us {
-    background-color: yellow;
+    background-color: rgb(255, 255, 81);
     border-radius: 3vw;
     margin: 1vh 2vw 1vh 2vw;
     padding: 2vh 0 0 0;
+    font-family: 'Ysabeau Infant', ssans-serif;
 }
 
 .about-us-heading {
     text-align: center;
     font-size: xx-large;
+    font-weight: 700;
 
 }
 
@@ -290,9 +290,10 @@ hr{
 
 .profile-pic {
     width: 50%;
+    border-radius: 100px;
 }
+
 
 .inline-div img {    
     height: 70px;
-    border-radius: 25px;
 }
