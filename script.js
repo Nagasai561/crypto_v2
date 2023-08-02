@@ -1,5 +1,5 @@
 //common functions
-function padding(input, l) {
+function padding(input, l) {        //pads a binary string to required length
     let n = l - input.length;
     for (let i = 0; i < n; i++) {
       input = "0" + input;
@@ -7,7 +7,7 @@ function padding(input, l) {
     return input;
 }
 
-window.onload = function() {
+window.onload = function() {        //on page load, generate image object and place that noisy pic in canvas element
     let canvas = document.getElementById("canvas-sysGen-encrypt");
     let ctx = canvas.getContext("2d");
 
@@ -24,7 +24,7 @@ window.onload = function() {
 //selection
 
 checkBoxText = document.getElementById("checkbox-text");
-checkBoxText.addEventListener("click", function() {
+checkBoxText.addEventListener("click", function() {         //encrpt as image dropbox will be disabled and text dropbox will be enabled
     checkBoxImg.checked = false;
     dropImg.disabled = true;
     dropText.disabled = false;
@@ -32,14 +32,14 @@ checkBoxText.addEventListener("click", function() {
 });
 
 checkBoxImg = document.getElementById("checkbox-img");
-checkBoxImg.addEventListener("click", function() {
+checkBoxImg.addEventListener("click", function() {          //encrypt as text dropbox will be disabled and image dropbox will be enabled
     checkBoxText.checked = false;
     dropText.disabled = true;
     dropImg.disabled = false;
 });
 
 dropText = document.getElementById("drop-text");
-dropText.addEventListener("change", function() {
+dropText.addEventListener("change", function() {            //after choosing a option in text dropbox, make only that option visible in html
     let list = document.getElementsByClassName("try-subcontainer")
     for(let i=0; i<list.length; i++) {
         list[i].style.display = "none";
@@ -50,7 +50,7 @@ dropText.addEventListener("change", function() {
 });
 
 dropImg = document.getElementById("drop-img");
-dropImg.addEventListener("change", function() {
+dropImg.addEventListener("change", function() {             //after choosing a option in img dropbox, make only that option visible in html
     let list = document.getElementsByClassName("try-subcontainer");
     for(let i=0; i<list.length; i++) {
         list[i].style.display = "none";
@@ -102,7 +102,7 @@ tryNoKeyDecryptB.addEventListener("click", function () {                        
     document.getElementById("try-no-key-fields-plaintext").value = output;
 });
 
-tryNoKeyResetB = document.getElementById("try-noKey-reset");
+tryNoKeyResetB = document.getElementById("try-noKey-reset");                //make the plaintext and cipher text fields empty
 tryNoKeyResetB.addEventListener("click", function () {
     document.getElementById("try-no-key-fields-plaintext").value = "";
     document.getElementById("try-no-key-fields-ciphertext").value = "";
@@ -276,9 +276,9 @@ tryUserGenKeyResetB.addEventListener("click", function () {
 
 sysGenImgEncryptB = document.getElementById("sysGen-img-encrypt-button");
 sysGenImgEncryptB.addEventListener("click", function() {
-    let canvas = document.getElementById("canvas-sysGen-encrypt");
-    let ctx = canvas.getContext("2d");
-    let imageData = ctx.getImageData(0,0, canvas.width, canvas.height);
+    let canvas = document.getElementById("canvas-sysGen-encrypt");          //generating a random key less than 256
+    let ctx = canvas.getContext("2d");                                      //encoding the ascii value in red values of pixels
+    let imageData = ctx.getImageData(0,0, canvas.width, canvas.height);     // key is stored in red value of first pixel
     let data = imageData.data;
     let inputText = document.getElementById("sysGen-img-plainText").value;
     let key = Math.floor(Math.random()*1000)%256;
@@ -295,7 +295,7 @@ sysGenImgEncryptB.addEventListener("click", function() {
 });
 
 sysGenImgDecryptB = document.getElementById("sysGen-img-decrypt-button");
-sysGenImgDecryptB.addEventListener("click", function() {
+sysGenImgDecryptB.addEventListener("click", function() {            // decoding the above cipher
     let canvas = document.getElementById("canvas-sysGen-decrypt");
     let ctx = canvas.getContext("2d");
     let file = document.getElementById("sysGen-img-decrypt-file").files[0];
