@@ -1,2 +1,3 @@
 # crypto_v2
-Second attempt at builiding a responsive website
+
+Website can be accessed [here](https://nagasai561.github.io/crypto_v2/)
